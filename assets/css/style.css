@@ -1,8 +1,5 @@
 /* #region common */
 
-:root {
-    
-}
 
 body {
     background-image: url(../img/cork.png);
@@ -17,21 +14,15 @@ img {
 /* #endregion common */
 
 
-/* #region utilities */
-
-
-/* #endregion utilities */
-
-
-
 /* #region header */
 header {
     background-image: url(../img/wall.png);
+    height: 99.2px;
 
     h1 {
     font-weight: 900;
     color: black;
-    font-size: 4.5rem;
+    font-size: 4rem;
     text-align: center;
 }
 }
@@ -42,8 +33,22 @@ header {
 /* #region main */
 main {
     .my_card {
-        max-width: 300px;
-        height: 100%;
+        width: 280px !important;
+        height: 340px !important;
+        
+        &:hover {
+            scale: 1.1;
+            rotate: 10deg;
+            transition: 0.3s;
+            
+            z-index: 1000;
+            position: relative;
+            
+            #pin {
+                display: none;
+            }
+        }
+        
 
         .my_card_top {
             position: relative;
@@ -66,33 +71,23 @@ main {
 /* #endregion main */
 
 
-/* #region footer */
-
-
-/* #endregion footer */
-
-
-
 /* #region mediaqueries */
 /* con bootstrap l'approccio è mobile-first, quindi si usa min-width nelle media-query. Con max-width non devo sovrascriverlo */
 @media screen and (max-width: 425px) {
     h1 {
         font-size: 3.5rem !important;
     }
-    .my_container {
-        max-width: 80%;
-    }
 }
 
 @media screen and (min-width: 576px) {
     .my_container {
-        max-width: 540px;
+        max-width: 610px;
     }
 }
 
 @media screen and (min-width: 992px) {
     .my_container {
-        max-width: 960px;
+        max-width: 930px;
     }
 }
 
