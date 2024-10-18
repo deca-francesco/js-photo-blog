@@ -1,0 +1,43 @@
+/* #region common */
+
+:root {
+    --header-bg: #dbdcdb;
+}
+
+body {
+    background-image: url(../img/cork.png);
+    font-family: "Edu TAS Beginner";
+    /* font-family: "Sometype Mono"; */
+}
+
+
+/* #endregion common */
+
+
+/* #region header */
+header {
+    background-color: var(--header-bg);
+
+    h1 {
+    font-weight: 900;
+    color: black;
+    font-size: 4.25rem;
+    text-align: center;
+}
+}
+
+/* #endregion header */
+
+
+/* #region main */
+main {
+    
+}
+
+
+/* #endregion main */
+
+
+/* #region footer */
+
+/* #endregion footer */
