@@ -4,7 +4,6 @@ console.log("js linked");
 const rowEl = document.querySelector(".container > .row");
 const myCardEl = document.querySelector(".my_card");
 const myCardTopEl = document.querySelector(".my_card_top");
-const myCardImgsEl = document.querySelectorAll(".picture");
 const myCardBottomEl = document.querySelector(".my_card_bottom");
 const overlayEl = document.getElementById("overlay");
 const overlayimgEl = document.querySelector("#overlay > img");
@@ -32,41 +31,37 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
             // uso il template literal per inserire i valori
             const markup = `
             <div class="col">
-                    <div class="my_card bg-light p-3 d-flex flex-column mx-auto">
-                        <div class="my_card_top">
-                            <img class="pin" src="./assets/img/pin.svg" alt="pin">
-                            <img class="picture" src="${url}" alt="random picture">
-                        </div>
-                        <div class="my_card_bottom pt-1">
-                            <p>${title}</p>
-                        </div>
+                <div class="my_card bg-light p-3 d-flex flex-column mx-auto">
+                    <div class="my_card_top">
+                        <img class="pin" src="./assets/img/pin.svg" alt="pin">
+                        <img class="picture" src="${url}" alt="random picture">
+                    </div>
+                    <div class="my_card_bottom pt-1">
+                        <p>${title}</p>
                     </div>
                 </div>
-            `
+            </div>`
+
             albumsMarkup += markup;
         });
 
         rowEl.innerHTML = albumsMarkup;
 
+        // seleziono le immagini qui dentro, altrimenti restituisce null perché le seleziona prima che la chiamat abbia finito
+        const myCardImgsEl = document.querySelectorAll(".my_card_top .picture");
         console.log(myCardImgsEl);
 
+        // apertura overlay
+        myCardImgsEl.forEach(image => {
+            image.addEventListener("click", () => {
+                overlayEl.classList.remove("d-none");
+                // assegno l'src dell'immagine su cui clicco all'immagine dell'overlay
+                overlayimgEl.src = image.src;
+            })
+        });
 
     })
-    .catch(err => console.error(err));
-
-
-// apertura overlay
-console.log(myCardImgsEl);
-
-myCardImgsEl.forEach(img => {
-    img.addEventListener("click", () => {
-        overlayEl.classList.remove("d-none");
-        console.log(overlayimgEl.innerHTML);
-        
-        overlayimgEl.innerHTML = img.innerHTML;
-    })
-});
-
+.catch(err => console.error(err));
 
 
 // chiusura overlay cliccando fouri dall'immagine
