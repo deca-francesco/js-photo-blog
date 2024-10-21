@@ -74,13 +74,20 @@ main {
         top: 0;
 
         img {
-            
+            z-index: 1000;
         }
 
         button {
             position: absolute;
             top: 20%;
             left: 63.65%;
+            z-index: 1000;
+        }
+
+        #closing_div {
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
         }
     }
 }
