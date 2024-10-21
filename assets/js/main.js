@@ -42,18 +42,17 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
 
         rowEl.innerHTML = albumsMarkup;
 
-        // 
-        
+        // apertura overlay
+        myCardImgEl.addEventListener("click", () => {
+            overlayEl.classList.remove("d-none");
+        })
+
     })
     .catch(err => console.error(err));
 
 
-// apertura overlay
-/*
-myCardImgEl.addEventListener("click", () => {
-    overlayEl.classList.remove("d-none");
-})
-*/
+
+
 
 // chiusura overlay
 overlayDivEl.addEventListener("click", () => {
