@@ -44,7 +44,7 @@ main {
             z-index: 1000;
             position: relative;
             
-            #pin {
+            .pin {
                 display: none;
             }
         }
@@ -53,7 +53,7 @@ main {
         .my_card_top {
             position: relative;
 
-            #pin {
+            .pin {
                 position: absolute;
                 top: -5%;
                 left: 50%;
@@ -80,7 +80,7 @@ main {
         button {
             position: absolute;
             top: 20%;
-            left: 63.65%;
+            /* left: 63.65%; */
             z-index: 1000;
         }
 
