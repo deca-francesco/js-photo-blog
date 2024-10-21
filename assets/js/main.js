@@ -20,7 +20,7 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
 
         // recupero le proprietà e i valori che mi servono da ogni oggetto con la destrutturazione
         albums.forEach(album => {
-            let { id, title, thumbnailUrl, url } = album;
+            let { title, url } = album;
 
             // prima lettera del title maiuscola
             // console.log(album.title);
@@ -34,7 +34,7 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
                 <div class="my_card bg-light p-3 d-flex flex-column mx-auto">
                     <div class="my_card_top">
                         <img class="pin" src="./assets/img/pin.svg" alt="pin">
-                        <img class="picture" src="${url}" alt="random picture">
+                        <img class="picture" src="${url}" alt="placeholder">
                     </div>
                     <div class="my_card_bottom pt-1">
                         <p>${title}</p>
